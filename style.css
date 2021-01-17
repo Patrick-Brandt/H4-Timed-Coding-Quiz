@@ -4,6 +4,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Removes Bullets from <li> items */
 ul {
     list-style-type: none;
 }
@@ -19,4 +20,17 @@ section {
     border: 3px solid blueviolet;
     padding: 15px;
     text-align: center;
+}
+
+#start {
+position: relative;
+}
+
+#startButton{
+position: absolute;
+bottom: 20px;
+display: block;
+align-content: center;
+
+
 }
