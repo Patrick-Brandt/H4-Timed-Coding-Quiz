@@ -10,6 +10,10 @@ li {
 }
 
 section {
+    height: 500px;
+    width: 500px;
+    display: block;
+    
     border: 3px solid blueviolet;
     padding: 10px;
     text-align: center;
