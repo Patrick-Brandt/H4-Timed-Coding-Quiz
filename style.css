@@ -1,2 +1,9 @@
-background-color: black;
-color: white;
+body {
+    background-color: black;
+    color: white;
+}
+
+li {
+    content: counter;
+
+}
