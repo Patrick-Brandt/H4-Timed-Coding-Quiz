@@ -11,4 +11,5 @@
 //
 //
 //
-
+var timer = document.querySelector(".timer-count");
+var startButton = document.querySelector(".start-button");
