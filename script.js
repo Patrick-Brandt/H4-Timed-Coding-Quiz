@@ -8,8 +8,14 @@
 // When question is answered correctly, add points to score. 
 // When all questions answered or time reaches 0, the GAME OVER.
 // When game over, user can enter their initials and score.
-//
-//
-//
-var timer = document.querySelector(".timer-count");
-var startButton = document.querySelector(".start-button");
+
+var timer = document.querySelector(".countdown");
+var startButton = document.querySelector("startButton");
+
+// The startQuiz function starts the timer when startButton is clicked.
+function startQuiz() {
+    timerCount = 90;
+    // Prevents start button from being clicked when round is in progress
+    startButton.disabled = true;
+    startTimer()
+  }
