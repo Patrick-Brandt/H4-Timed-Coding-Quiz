@@ -9,6 +9,10 @@
 // When all questions answered or time reaches 0, the GAME OVER.
 // When game over, user can enter their initials and score.
 
+//I was trying to hide section 1, and it worked. I think I need to use this in order to move from question to question. For example, "if user clicks start, hide section 1,3,4,5. Not sure how it will work yet.
+//var sectionChange = document.querySelector("#question1");
+//sectionChange.setAttribute("style","display:none;")
+
 var timer = document.querySelector(".countdown");
 var startButton = document.querySelector("startButton");
 
