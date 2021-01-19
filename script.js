@@ -19,20 +19,10 @@
 //  question5.setAttribute("style",)"display:none;");
 //};    
 
-//var timer = document.querySelector(".countdown");
-//var startButton = document.querySelector("startButton");
-
-// The startQuiz function starts the timer when startButton is clicked.
-//function startQuiz() {
- //   timerCount = 90;
-   
- // }
-
 var correct = document.querySelector(".correct");
 var wrong = document.querySelector(".wrong");
 var countdown = document.querySelector(".countdown");
 var startButton = document.querySelector("startButton");
-
 var winCounter = 0;
 var loseCounter = 0;
 
@@ -51,7 +41,7 @@ function startTimer() {
     timer = setInterval(function() {
         timerCount--;
         countdown.textContent = timerCount;
-        if (timerCount >=0) {
+        if (timerCount <=0) {
             //clears interval and stops timer.
             clearInterval(timer);
 
@@ -63,6 +53,8 @@ function startTimer() {
 
 // Event listener starts game when user clicks the startbutton.
 startButton.addEventListener("click",startGame);
+
+//Event Listener 
 
 
 
