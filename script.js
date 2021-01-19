@@ -32,6 +32,39 @@ var correct = document.querySelector(".correct");
 var wrong = document.querySelector(".wrong");
 var countdown = document.querySelector(".countdown");
 var startButton = document.querySelector("startButton");
+
+var winCounter = 0;
+var loseCounter = 0;
+
+var timer;
+var timerCount;
+
+//This function is called when the user clicks the start button.
+function startGame () {
   
+    timerCount = 75;
+    startTimer ()
+}
+
+function startTimer() {
+    // Sets the timer
+    timer = setInterval(function() {
+        timerCount--;
+        countdown.textContent = timerCount;
+        if (timerCount >=0) {
+            //clears interval and stops timer.
+            clearInterval(timer);
+
+        }
+    
+    },1000);
+}
+
+
+// Event listener starts game when user clicks the startbutton.
+startButton.addEventListener("click",startGame);
+
+
+
   
    
