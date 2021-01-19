@@ -54,7 +54,9 @@ function startTimer() {
 // Event listener starts game when user clicks the startbutton.
 startButton.addEventListener("click",startGame);
 
-//Event Listener 
+//Event Listener for correct answers or an I good with the quesryselector above? Then do I have the event listener trigger the hide question function?
+correct.addEventListener("click",)
+//Event listener for incorrect answers
 
 
 
