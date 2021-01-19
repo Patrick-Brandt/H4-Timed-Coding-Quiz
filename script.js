@@ -10,20 +10,36 @@
 // When all questions answered or time reaches 0, then GAME OVER.
 // When game over, user can enter their initials and score.
 
-//I was trying to hide section 1, and it worked. I think I need to use this in order to move from question to question. For example, "if user clicks start, hide section 1,3,4,5. Not sure how it will work yet.
-//  function hideQuestion1 (){
-//  question1.setAtrribute("style","display:none;")  
-//}                 or
-//var sectionChange = document.querySelector("#question1");
-//sectionChange.setAttribute("style","display:none;")
+//I was trying to hide the start section. I think I need to use this in order to move from question to question. For example, "if user clicks start, hide section start,2,3,4,5. Not sure how it will work yet.
+//  function showQuestion1 (){
+//  start.setAtrribute("style","display:none;"); 
+//  question2.setAttribute("style","display:none;");
+//  question3.setAttribute("style",)"display:none;");
+//  question4.setAttribute("style",)"display:none;");
+//  question5.setAttribute("style",)"display:none;");
+//};    
 
-var timer = document.querySelector(".countdown");
-var startButton = document.querySelector("startButton");
+//var timer = document.querySelector(".countdown");
+//var startButton = document.querySelector("startButton");
 
 // The startQuiz function starts the timer when startButton is clicked.
-function startQuiz() {
-    timerCount = 90;
-    // Prevents start button from being clicked when round is in progress
-    startButton.disabled = true;
-    startTimer()
-  }
+//function startQuiz() {
+ //   timerCount = 90;
+   
+ // }
+
+
+var startQuiz = document.querySelector("#startButton");
+
+
+startQuiz.addEventListener("click", function() {
+         start.setAtrribute("style","display:none;"); 
+         question1.setAttribute("style","display:block;");
+          question2.setAttribute("style","display:none;");
+          question3.setAttribute("style","display:none;");
+          question4.setAttribute("style","display:none;");
+          question5.setAttribute("style","display:none;");
+        });    
+  
+  
+   
