@@ -28,18 +28,10 @@
    
  // }
 
-
-var startQuiz = document.querySelector("#startButton");
-
-
-startQuiz.addEventListener("click", function() {
-         start.setAtrribute("style","display:none;"); 
-         question1.setAttribute("style","display:block;");
-          question2.setAttribute("style","display:none;");
-          question3.setAttribute("style","display:none;");
-          question4.setAttribute("style","display:none;");
-          question5.setAttribute("style","display:none;");
-        });    
+var correct = document.querySelector(".correct");
+var wrong = document.querySelector(".wrong");
+var countdown = document.querySelector(".countdown");
+var startButton = document.querySelector("startButton");
   
   
    
