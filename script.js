@@ -21,21 +21,52 @@
 //  question5.setAttribute("style",)"display:none;");
 //};    
 var currentsection = 1;
+var startButton = document.getElementById("startButton");
+var startSection = document.getElementById("section1");
+var questionSection = document.getElementById("question_section");
 var correct = document.querySelector(".correct");
 var wrong = document.querySelector(".wrong");
 var countdown = document.querySelector(".countdown");
-var startButton = document.querySelector("startButton");
+
 var winCounter = 0;
 var loseCounter = 0;
 var points = 0;
 var timer;
-var timerCount;
+var timerCount= 75;
 function showQuestion () {
     // target all sections, and add class of hidden
     // target section with id of `currentQuestion`...
     // const currentSection = document.getElementById(currentQuestion.toString())
     // removed hidden class
 };  
+
+var questions = [
+    {
+        question: "The main purpose of Javascript is to:",
+        choices: ["A. define the content of webpages.","B. specify the layout of webpages.","C. program the behavior of the webpages.","D. destroy the information super highway."],
+        answer: "C. program the behavior of the webpages."  
+    },
+    {
+        question: "Javascript data types DO NOT include:",
+        choices: ["A. strings","B. balloons","C. booleans","D. numbers"],
+        answer: "B. balloons" 
+    },
+    {
+        question: "Patrick's coding skills have improved immensely since he started coding in December 2020.",
+        choices: ["A. Maybe a little bit.","B. Not really, no.","C. What coding skills?","D. YES! Look at how far he has come in such a short time!"],
+        answer: "D. YES! Look at how far he has come in such a short time! " 
+    },
+    {
+        question: "I would love to hire Patrick as a web developer, based on his winning smile and superb coding skills.",
+        choices: ["A. No, I wouldn't hire him.","B. YES! He would be perfect!","I'm not sure.","D. I'm going to wait and think about it for a while."],
+        answer: "B. YES! He would be perfect!" 
+    },
+    {
+        question: "Patrick should be living good while he continues to work on his coding skills. A good starting salary for him would be:",
+        choices: ["A. Hmmm...somewhere between $70,000 and $150,000...to start.","B. $40,000 per year.","C. Minimum wage is fine.","D. He should be paying us!"],
+        answer: "A. Hmmm...somewhere between $70,000 and $150,000...to start." 
+    },
+]
 
 //This function is called when the user clicks the start button.
 // function startGame () {
