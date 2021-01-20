@@ -20,7 +20,7 @@
 //  question4.setAttribute("style",)"display:none;");
 //  question5.setAttribute("style",)"display:none;");
 //};    
-var currentQuestion = 1;
+var currentsection = 1;
 var correct = document.querySelector(".correct");
 var wrong = document.querySelector(".wrong");
 var countdown = document.querySelector(".countdown");
