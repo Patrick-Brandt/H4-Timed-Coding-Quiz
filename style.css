@@ -46,6 +46,11 @@ ul {
     list-style-type: none;
 }
 
+/* This class will be used to hide start section all quiz questions, that are not being used. */
+.hidden {
+    display: none;
+}
+
 section {
     margin: 30px;
     display: block;
