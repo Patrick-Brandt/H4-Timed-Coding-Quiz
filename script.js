@@ -20,10 +20,13 @@
 //  question4.setAttribute("style",)"display:none;");
 //  question5.setAttribute("style",)"display:none;");
 //};    
-var currentsection = 1;
+var currentQuestionIndex = 1;
 var startButton = document.getElementById("startButton");
-var startSection = document.getElementById("section1");
+var startSection = document.getElementById("start-section");
 var questionSection = document.getElementById("question_section");
+var questionText = document.getElementById("question-text")
+var choicesList = document.getElementById("choices-list")
+
 var correct = document.querySelector(".correct");
 var wrong = document.querySelector(".wrong");
 var countdown = document.querySelector(".countdown");
@@ -33,13 +36,12 @@ var loseCounter = 0;
 var points = 0;
 var timer;
 var timerCount= 75;
-function showQuestion () {
+
     // target all sections, and add class of hidden
     // target section with id of `currentQuestion`...
     // const currentSection = document.getElementById(currentQuestion.toString())
     // removed hidden class
-};  
-
+  
 var questions = [
     {
         question: "The main purpose of Javascript is to:",
@@ -67,6 +69,31 @@ var questions = [
         answer: "A. Hmmm...somewhere between $70,000 and $150,000...to start." 
     },
 ]
+
+function startQuiz() {
+    startSection.setAttribute("class", "hidden")
+    //start out with hidden class on questions section. Removed once quix starts.
+    questionSection.removeAttribute("class")
+    //TO-DO Add logic that sets up timer
+    displayQuestion()
+}
+
+function displayQuestion() {
+    //clear out the content of the questions and answers.
+    questionText.textContent = " "
+    choicesList.textContent = " "
+    //Add the new question to the page.
+    questionText.textContent = questions
+    [currentQuestionIndex].question
+    //loop through answers from current question and display each one in a button.
+    questions[currentQuestionIndex].choices.forEach(function(choice) {
+        var button = document.createElement('button')
+//To-do I need to go through my html page and remove buttons and probably bootstrap.
+        button.textContent = choice
+        button.addEventListener("click", checkAnswer)
+        choicesList.append(button)
+    })
+}
 
 //This function is called when the user clicks the start button.
 // function startGame () {
