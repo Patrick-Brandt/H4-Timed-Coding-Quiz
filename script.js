@@ -95,7 +95,36 @@ function displayQuestion() {
     })
 }
 
-//This function is called when the user clicks the start button.
+function checkAnswer(event) {
+    var chosenAnswer = event.target.textContent
+    //var userAnswer = event.target.dataset.answer
+    if (chosenAnswer === questions[currentQuestionIndex]
+        .answer) {
+ // I'm doing console.log to test, but may remove at end.
+            console.log("User chose correct answer.")
+ //To-do- display user feedback. Or do I? I don't think this is necessary, unless I need to for storing locally. Will get to later.
+    } else {
+        console.log("User chose incorrect answer.")
+ //To-do- Need to add code that will remove seconds from time-clock. --
+    }
+
+//Increase current question index.
+// To-do- Add a conditional that checks to see if all questions have been answered. Probably will use 'array.length' or something.
+//If all questions answered, call function that ends quiz.
+//If more more questions left, call displayQuestion function again. 
+displayQuestion()
+}
+
+function endQuiz() {
+    //Todo- clear timer.
+    //To-do- hide question sections.
+    //show final score
+    //user enters initials and saves high score to local storage.
+}
+
+// Event listener starts quiz when user clicks the startButton.
+startButton.addEventListener('click', startQuiz)
+
 // function startGame () {
   
 //     timerCount = 75;
@@ -115,10 +144,6 @@ function displayQuestion() {
     
 //     },1000);
 // }
-
-
-// // Event listener starts game when user clicks the startbutton.
-// startButton.addEventListener("click",startGame);
 
 //Event Listener for correct answers or an I good with the quesryselector above? Then do I have the event listener trigger the hide question function?
 //correct.addEventListener("click",//Do I add in the hide question function here?)
