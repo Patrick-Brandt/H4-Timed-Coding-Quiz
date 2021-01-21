@@ -13,7 +13,7 @@
     <!--Countdown clock in top left -->
     <div class ="timerClock">
         <h3>Time Remaining:</h3>
-        <div class="countdown">75</div>
+        <p class="countdown">75</p>
     </div>
     <!-- High scores in top right. -->
     <div class ="highscores">
@@ -29,20 +29,7 @@
     <section id="question_section" class= "hidden">
         <h2 id="question-text"></h2>
         <br>
-        <ul id="choices-list">
-            <li class="wrong">
-                <button type="button" class="btn btn-outline-light" data-answer="wrong"></button>
-            </li>
-            <li class="wrong">
-                <button type="button" class="btn btn-outline-light" data-answer="wrong"></button>
-            </li>
-            <li class="correct">
-                <button type="button" class="btn btn-outline-light" data-answer="correct"></button>
-            </li>
-            <li class="wrong">
-                <button type="button" class="btn btn-outline-light" data-answer="wrong"></button>
-            </li>
-        </ul> 
+        <div id="choices-list"></div> 
     </section>
 
     <!-- These are the Bootstrap Bundle scripts. If you ever have issues, you can try the Bootstrap Separate Scripts Solution. -->

@@ -23,13 +23,14 @@
 var currentQuestionIndex = 1;
 var startButton = document.getElementById("startButton");
 var startSection = document.getElementById("start-section");
+var countdown = document.querySelector(".countdown");
+
 var questionSection = document.getElementById("question_section");
 var questionText = document.getElementById("question-text")
 var choicesList = document.getElementById("choices-list")
 
 var correct = document.querySelector(".correct");
 var wrong = document.querySelector(".wrong");
-var countdown = document.querySelector(".countdown");
 
 var winCounter = 0;
 var loseCounter = 0;
