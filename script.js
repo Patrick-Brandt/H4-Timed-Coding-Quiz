@@ -1,47 +1,31 @@
 // To-do list
 
-// I added an event listener for start button, and need to add one for correct/incorrect buttons. I started to on the buttom but need to add in a finction that I haven't made yet?!?!
-    //timer starts counting down.    
-//hide "start" section when start button is clicked, and display question 1.
 // When you answer a question correctly, add points to score.
-    // when correct, hide question 1, and display question 2.
+    
 // When you answer a question incorrectly, time is subtracted from the clock.
-//  
+  
 // When all questions answered or time reaches 0, then GAME OVER.
 
 // When game over, user can enter their initials and score.
     //need to add local storage.
-
-//I was trying to hide the start section. I think I need to use this in order to move from question to question. For example, "if user clicks start, hide section start,2,3,4,5. Not sure how it will work yet.
-//  function showQuestion1 (){
-//  start.setAtrribute("style","display:none;"); 
-//  question2.setAttribute("style","display:none;");
-//  question3.setAttribute("style",)"display:none;");
-//  question4.setAttribute("style",)"display:none;");
-//  question5.setAttribute("style",)"display:none;");
-//};    
+  
+// The below variables are for the quiz questions and answers.   
 var currentQuestionIndex = 1;
+var finishedQuizQuestions= currentQuestionIndex.length;
+//The below variables are for the start button and timer.
 var startButton = document.getElementById("startButton");
 var startSection = document.getElementById("start-section");
 var countdown = document.querySelector(".countdown");
 var timer;
 var timerCount= 75;
-
+// The below variables are for pulling info from HTML for quiz questions.
 var questionSection = document.getElementById("question_section");
 var questionText = document.getElementById("question-text")
 var choicesList = document.getElementById("choices-list")
-
-var correct = document.querySelector(".correct");
-var wrong = document.querySelector(".wrong");
-
+//The below variables are for tracking points scored.
 var winCounter = 0;
 var loseCounter = 0;
 var points = 0;
-
-    // target all sections, and add class of hidden
-    // target section with id of `currentQuestion`...
-    // const currentSection = document.getElementById(currentQuestion.toString())
-    // removed hidden class
   
 var questions = [
     {
@@ -77,7 +61,6 @@ function startQuiz() {
     questionSection.removeAttribute("class")
     displayQuestion()
     startTimer ()
-
 }
 
 // The function below is for the timer. It is invoked within the startQuiz function, once the start button is pressed.
@@ -89,7 +72,6 @@ function startTimer() {
             if (timerCount === 0) {
                 window.clearInterval(timer);
             }
-
     }, 1000);    
 }
 
@@ -138,8 +120,7 @@ function endQuiz() {
 // Event listener starts quiz when user clicks the startButton.
 startButton.addEventListener('click', startQuiz)
   
-
-//Event Listener for correct answers or an I good with the quesryselector above? Then do I have the event listener trigger the hide question function?
+//Event Listener for correct answers or an I good with the quesryselector above? 
 //correct.addEventListener("click",//Do I add in the hide question function here?)
 //Event listener for incorrect answers.
 var section = document.getElementById(currentQuestion.toString())
