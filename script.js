@@ -77,6 +77,8 @@ function startQuiz() {
     questionSection.removeAttribute("class")
     //TO-DO Add logic that sets up timer
     displayQuestion()
+    startTimer ()
+
 }
 
 //timer
