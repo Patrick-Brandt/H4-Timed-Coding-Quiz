@@ -97,7 +97,7 @@ function displayQuestion() {
 function checkAnswer(event) {
     var chosenAnswer = event.target.textContent
     
-    if (chosenAnswer === questions[currentQuestionIndex].answer) {
+    if (chosenAnswer === questions[currentQuestionIndex].answer && currentQuestionIndex !--finishedQuizQuestions) {
         points++; //Not sure if this is correct. Still some work to do with points.
         currentQuestionIndex ++; 
         displayQuestion ();
