@@ -124,7 +124,7 @@ function endQuiz() {
 // Event listener starts quiz when user clicks the startButton.
 startButton.addEventListener('click', startQuiz)
    
-var section = document.getElementById(currentQuestion.toString())
+var section = document.getElementById(currentQuestionIndex.toString())
 section.addEventListener('click', function(e) {
     console.log('e: ', e.target.dataset.answer)
 })
