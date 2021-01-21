@@ -73,15 +73,14 @@ var questions = [
 
 function startQuiz() {
     startSection.setAttribute("class", "hidden")
-    //start out with hidden class on questions section. Removed once quix starts.
+    //start out with hidden class on questions section. Removed once quiz starts.
     questionSection.removeAttribute("class")
-    //TO-DO Add logic that sets up timer
     displayQuestion()
     startTimer ()
 
 }
 
-//timer
+// The function below is for the timer. It is invoked within the startQuiz function, once the start button is pressed.
 function startTimer() {
     timer = setInterval(function() {
         timerCount--;
@@ -105,31 +104,28 @@ function displayQuestion() {
     //loop through answers from current question and display each one in a button.
     questions[currentQuestionIndex].choices.forEach(function(choice) {
         var button = document.createElement('button')
-//To-do I need to go through my html page and remove buttons and probably bootstrap.
+
         button.textContent = choice
         button.addEventListener("click", checkAnswer)
         choicesList.append(button)
     })
 }
 
+//This is the function that checks to see if the answer is correct.
 function checkAnswer(event) {
     var chosenAnswer = event.target.textContent
-    //var userAnswer = event.target.dataset.answer
-    if (chosenAnswer === questions[currentQuestionIndex]
-        .answer) {
- // I'm doing console.log to test, but may remove at end.
-            console.log("User chose correct answer.")
- //To-do- display user feedback. Or do I? I don't think this is necessary, unless I need to for storing locally. Will get to later.
-    } else {
-        console.log("User chose incorrect answer.")
- //To-do- Need to add code that will remove seconds from time-clock. --
-    }
-
-//Increase current question index.
+    
+    if (chosenAnswer === questions[currentQuestionIndex].answer) {
+        points++; //Not sure if this is correct. Still some work to do with points.
+        currentQuestionIndex ++; 
+        displayQuestion ();
+    } else if (chosenAnswer !== questions[currentQuestionIndex].answer) {
+        currentQuestionIndex ++;
+        points--; //Not sure if this is correct. Still some work to do with points.
+        displayQuestion();
+    }   
 // To-do- Add a conditional that checks to see if all questions have been answered. Probably will use 'array.length' or something.
-//If all questions answered, call function that ends quiz.
-//If more more questions left, call displayQuestion function again. 
-displayQuestion()
+//If all questions answered, call function that ends quiz. 
 }
 
 function endQuiz() {
