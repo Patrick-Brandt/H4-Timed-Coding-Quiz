@@ -97,11 +97,11 @@ function displayQuestion() {
 function checkAnswer(event) {
     var chosenAnswer = event.target.textContent
     
-    if (chosenAnswer === questions[currentQuestionIndex].answer && currentQuestionIndex !--finishedQuizQuestions) {
+    if (chosenAnswer === questions[currentQuestionIndex].answer && currentQuestionIndex !==finishedQuizQuestions) {
         points++; //Not sure if this is correct. Still some work to do with points.
         currentQuestionIndex ++; 
         displayQuestion ();
-    } else if (chosenAnswer !== questions[currentQuestionIndex].answer) {
+    } else if (chosenAnswer !== questions[currentQuestionIndex].answer && currentQuestionIndex !==finishedQuizQuestions) {
         currentQuestionIndex ++;
         points--; //Not sure if this is correct. Still some work to do with points.
         displayQuestion();
