@@ -106,12 +106,16 @@ function checkAnswer(event) {
         points--; //Not sure if this is correct. Still some work to do with points.
         timerCount -= 20;
         displayQuestion();
-    }  
+    } else if (currentQuestionIndex === finishedQuizQuestions) {
 // To-do- Add a conditional that checks to see if all questions have been answered. Probably will use 'array.length' or something.
 //If all questions answered, call function that ends quiz. 
+        endQuiz();
+    }
 }
 
+
 function endQuiz() {
+    clearInterval(timer);
     //Todo- clear timer.
     //show final score
     //user enters initials and saves high score to local storage.
