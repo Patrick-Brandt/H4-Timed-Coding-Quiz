@@ -104,25 +104,22 @@ function checkAnswer(event) {
     } else if (chosenAnswer !== questions[currentQuestionIndex].answer && currentQuestionIndex !==finishedQuizQuestions) {
         currentQuestionIndex ++;
         points--; //Not sure if this is correct. Still some work to do with points.
+        timerCount -= 20;
         displayQuestion();
-    }   
+    }  
 // To-do- Add a conditional that checks to see if all questions have been answered. Probably will use 'array.length' or something.
 //If all questions answered, call function that ends quiz. 
 }
 
 function endQuiz() {
     //Todo- clear timer.
-    //To-do- hide question sections.
     //show final score
     //user enters initials and saves high score to local storage.
 }
 
 // Event listener starts quiz when user clicks the startButton.
 startButton.addEventListener('click', startQuiz)
-  
-//Event Listener for correct answers or an I good with the quesryselector above? 
-//correct.addEventListener("click",//Do I add in the hide question function here?)
-//Event listener for incorrect answers.
+   
 var section = document.getElementById(currentQuestion.toString())
 section.addEventListener('click', function(e) {
     console.log('e: ', e.target.dataset.answer)
