@@ -24,6 +24,8 @@ var currentQuestionIndex = 1;
 var startButton = document.getElementById("startButton");
 var startSection = document.getElementById("start-section");
 var countdown = document.querySelector(".countdown");
+var timer;
+var timerCount= 75;
 
 var questionSection = document.getElementById("question_section");
 var questionText = document.getElementById("question-text")
@@ -35,8 +37,6 @@ var wrong = document.querySelector(".wrong");
 var winCounter = 0;
 var loseCounter = 0;
 var points = 0;
-var timer;
-var timerCount= 75;
 
     // target all sections, and add class of hidden
     // target section with id of `currentQuestion`...
@@ -78,6 +78,20 @@ function startQuiz() {
     //TO-DO Add logic that sets up timer
     displayQuestion()
 }
+
+//timer
+function startTimer() {
+    timer = setInterval(function() {
+        timerCount--;
+        countdown.textContent = timerCount;
+
+            if (timerCount === 0) {
+                window.clearInterval(timer);
+            }
+
+    }, 1000);    
+}
+
 
 function displayQuestion() {
     //clear out the content of the questions and answers.
@@ -125,26 +139,7 @@ function endQuiz() {
 
 // Event listener starts quiz when user clicks the startButton.
 startButton.addEventListener('click', startQuiz)
-
-// function startGame () {
   
-//     timerCount = 75;
-//     startTimer ()
-// }
-
-// function startTimer() {
-//     // Sets the timer
-//     timer = setInterval(function() {
-//         timerCount--;
-//         countdown.textContent = timerCount;
-//         if (timerCount <=0) {
-//             //clears interval and stops timer.
-//             clearInterval(timer);
-
-//         }
-    
-//     },1000);
-// }
 
 //Event Listener for correct answers or an I good with the quesryselector above? Then do I have the event listener trigger the hide question function?
 //correct.addEventListener("click",//Do I add in the hide question function here?)
