@@ -10,23 +10,6 @@
     //need to add local storage.
   
 // The below variables are for the quiz questions and answers.   
-var currentQuestionIndex = 1;
-var finishedQuizQuestions= currentQuestionIndex.length;
-//The below variables are for the start button and timer.
-var startButton = document.getElementById("startButton");
-var startSection = document.getElementById("start-section");
-var countdown = document.querySelector(".countdown");
-var timer;
-var timerCount= 75;
-// The below variables are for pulling info from HTML for quiz questions.
-var questionSection = document.getElementById("question_section");
-var questionText = document.getElementById("question-text")
-var choicesList = document.getElementById("choices-list")
-//The below variables are for tracking points scored.
-var winCounter = 0;
-var loseCounter = 0;
-var points = 0;
-  
 var questions = [
     {
         question: "The main purpose of Javascript is to:",
@@ -54,6 +37,23 @@ var questions = [
         answer: "A. Hmmm...somewhere between $70,000 and $150,000...to start." 
     },
 ]
+var currentQuestionIndex = 0;
+var finishedQuizQuestions = questions.length - 1;
+//The below variables are for the start button and timer.
+var startButton = document.getElementById("startButton");
+var startSection = document.getElementById("start-section");
+var countdown = document.querySelector(".countdown");
+var timerCount = 75;
+var timer;
+// The below variables are for pulling info from HTML for quiz questions.
+var questionSection = document.getElementById("question_section");
+var questionText = document.getElementById("question-text")
+var choicesList = document.getElementById("choices-list")
+//The below variables are for tracking points scored.
+var winCounter = 0;
+var loseCounter = 0;
+var points = 0;
+  
 
 function startQuiz() {
     startSection.setAttribute("class", "hidden")
@@ -65,12 +65,14 @@ function startQuiz() {
 
 // The function below is for the timer. It is invoked within the startQuiz function, once the start button is pressed.
 function startTimer() {
+    countdown.textContent = timerCount;
     timer = setInterval(function() {
         timerCount--;
         countdown.textContent = timerCount;
 
-            if (timerCount === 0) {
+            if (timerCount <= 0) {
                 window.clearInterval(timer);
+                countdown.textContent = 0;
             }
     }, 1000);    
 }
@@ -107,17 +109,15 @@ function checkAnswer(event) {
         timerCount -= 20;
         displayQuestion();
     } else if (currentQuestionIndex === finishedQuizQuestions) {
-// To-do- Add a conditional that checks to see if all questions have been answered. Probably will use 'array.length' or something.
-//If all questions answered, call function that ends quiz. 
-timerCount=0;        
-endQuiz();
+        // To-do- Add a conditional that checks to see if all questions have been answered. Probably will use 'array.length' or something.
+        //If all questions answered, call function that ends quiz.         
+        endQuiz();
     }
 }
 
 
 function endQuiz() {
     clearInterval(timer);
-    //Todo- clear timer.
     //show final score
     //user enters initials and saves high score to local storage.
 }
@@ -125,7 +125,3 @@ function endQuiz() {
 // Event listener starts quiz when user clicks the startButton.
 startButton.addEventListener('click', startQuiz)
    
-//var section = document.getElementById(currentQuestionIndex.toString())
-//section.addEventListener('click', function(e) {
-//    console.log('e: ', e.target.dataset.answer)
-//})
