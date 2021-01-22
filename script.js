@@ -118,6 +118,8 @@ function checkAnswer(event) {
 
 function endQuiz() {
     clearInterval(timer);
+    questionSection.setAttribute("class", "hidden");
+
     //show final score
     //user enters initials and saves high score to local storage.
 }
