@@ -109,7 +109,8 @@ function checkAnswer(event) {
     } else if (currentQuestionIndex === finishedQuizQuestions) {
 // To-do- Add a conditional that checks to see if all questions have been answered. Probably will use 'array.length' or something.
 //If all questions answered, call function that ends quiz. 
-        endQuiz();
+timerCount=0;        
+endQuiz();
     }
 }
 
@@ -124,7 +125,7 @@ function endQuiz() {
 // Event listener starts quiz when user clicks the startButton.
 startButton.addEventListener('click', startQuiz)
    
-var section = document.getElementById(currentQuestionIndex.toString())
-section.addEventListener('click', function(e) {
-    console.log('e: ', e.target.dataset.answer)
-})
+//var section = document.getElementById(currentQuestionIndex.toString())
+//section.addEventListener('click', function(e) {
+//    console.log('e: ', e.target.dataset.answer)
+//})
