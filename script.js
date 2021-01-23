@@ -102,7 +102,9 @@ function checkAnswer(event) {
         currentQuestionIndex ++;
         timerCount -= 20;
         displayQuestion();
-    } else if (currentQuestionIndex === finishedQuizQuestions) {         
+    } else if (chosenAnswer === questions[currentQuestionIndex].answer && currentQuestionIndex === finishedQuizQuestions) {         
+        points += 20; 
+        displayScore ();
         endQuiz();
     }
 }
