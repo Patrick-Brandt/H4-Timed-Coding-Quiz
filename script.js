@@ -125,7 +125,7 @@ function endQuiz() {
 
 function storePoints () {
     localStorage.setItem("score", points);
-    var saveScore = prompt("Please enter your initials and high score.");
+    var saveScore = prompt("Please enter your initials.");
     console.log (saveScore);
 }
 
