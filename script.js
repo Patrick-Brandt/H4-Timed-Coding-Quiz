@@ -41,8 +41,6 @@ var questionSection = document.getElementById("question_section");
 var questionText = document.getElementById("question-text")
 var choicesList = document.getElementById("choices-list")
 //The below variables are for tracking points scored.
-var winCounter = 0;
-var loseCounter = 0;
 var points = 0;
   
 

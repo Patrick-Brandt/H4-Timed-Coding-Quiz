@@ -25,10 +25,14 @@ body {
 }
 
 .highscores {
-position: absolute;
-top: 0;
-right: 0;
-color: rgb(238, 55, 198);
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgb(238, 55, 198);
+}
+.scores {
+   color:yellow;
+   font-size: 50px;
 }
 
 button {
