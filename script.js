@@ -42,6 +42,7 @@ var questionText = document.getElementById("question-text")
 var choicesList = document.getElementById("choices-list")
 //The below variables are for tracking points scored.
 var points = 0;
+var scores = document.querySelector(".scores");
   
 
 function startQuiz() {
@@ -84,17 +85,23 @@ function displayQuestion() {
     })
 }
 
+function displayScore (){
+scores.innerText = points;
+console.log(points)
+}
+
+
 //This is the function that checks to see if the answer is correct.
 function checkAnswer(event) {
     var chosenAnswer = event.target.textContent
     
     if (chosenAnswer === questions[currentQuestionIndex].answer && currentQuestionIndex !==finishedQuizQuestions) {
-        points++; //Not sure if this is correct. Still some work to do with points.
+        points += 20; //Not sure if this is correct. Still some work to do with points.
+        displayScore ();
         currentQuestionIndex ++; 
         displayQuestion ();
     } else if (chosenAnswer !== questions[currentQuestionIndex].answer && currentQuestionIndex !==finishedQuizQuestions) {
         currentQuestionIndex ++;
-        points--; //Not sure if this is correct. Still some work to do with points.
         timerCount -= 20;
         displayQuestion();
     } else if (currentQuestionIndex === finishedQuizQuestions) {
