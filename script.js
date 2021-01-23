@@ -42,8 +42,11 @@ var choicesList = document.getElementById("choices-list")
 //The below variables are for tracking points scored.
 var points = 0;
 var scores = document.querySelector(".scores");
-  
 
+//This is for local storage
+var points = localStorage.getItem("points");
+
+//starts the Quiz
 function startQuiz() {
     startSection.setAttribute("class", "hidden")
     //start out with hidden class on questions section. Removed once quiz starts.
@@ -109,6 +112,7 @@ function checkAnswer(event) {
     } else if (chosenAnswer !== questions[currentQuestionIndex].answer && currentQuestionIndex === finishedQuizQuestions) {          
         displayScore ();
         endQuiz();
+        storePoints
     }        
 }
 
@@ -117,6 +121,14 @@ function endQuiz() {
     clearInterval(timer);
     questionSection.setAttribute("class", "hidden");
     countdown.textContent = 0;
+    storePoints();
+}
+
+function storePoints () {
+    points.textContent = points;
+    localStorage.setItem("count","count");
+    var saveScore = prompt("Please enter your initials and high score.");
+    document.write (saveScore);
 }
 
 // Event listener starts quiz when user clicks the startButton.
