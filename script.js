@@ -1,5 +1,3 @@
-// To-do list
-
 // The below variables are for the quiz questions and answers.   
 var questions = [
     {
@@ -28,6 +26,7 @@ var questions = [
         answer: "A. Hmmm...somewhere between $70,000 and $150,000...to start." 
     },
 ]
+
 var currentQuestionIndex = 0;
 var finishedQuizQuestions = questions.length - 1;
 //The below variables are for the start button and timer.
@@ -67,15 +66,14 @@ function startTimer() {
     }, 1000);    
 }
 
-
 function displayQuestion() {
     //clear out the content of the questions and answers.
     questionText.textContent = " "
     choicesList.textContent = " "
-    //Add the new question to the page.
+    //Adds the new question to the page.
     questionText.textContent = questions
     [currentQuestionIndex].question
-    //loop through answers from current question and display each one in a button.
+    // Loops through answers from current question and display each one in a button.
     questions[currentQuestionIndex].choices.forEach(function(choice) {
         var button = document.createElement('button')
 
@@ -85,18 +83,18 @@ function displayQuestion() {
     })
 }
 
+// This function displays the score on the top right corner of screen.
 function displayScore (){
 scores.innerText = points;
 console.log(points)
 }
-
 
 //This is the function that checks to see if the answer is correct.
 function checkAnswer(event) {
     var chosenAnswer = event.target.textContent
     
     if (chosenAnswer === questions[currentQuestionIndex].answer && currentQuestionIndex !==finishedQuizQuestions) {
-        points += 20; //Not sure if this is correct. Still some work to do with points.
+        points += 20; 
         displayScore ();
         currentQuestionIndex ++; 
         displayQuestion ();
@@ -104,21 +102,16 @@ function checkAnswer(event) {
         currentQuestionIndex ++;
         timerCount -= 20;
         displayQuestion();
-    } else if (currentQuestionIndex === finishedQuizQuestions) {
-        // To-do- Add a conditional that checks to see if all questions have been answered. Probably will use 'array.length' or something.
-        //If all questions answered, call function that ends quiz.         
+    } else if (currentQuestionIndex === finishedQuizQuestions) {         
         endQuiz();
     }
 }
 
-
+//This function ends the quiz.
 function endQuiz() {
     clearInterval(timer);
     questionSection.setAttribute("class", "hidden");
     countdown.textContent = 0;
-
-    //show final score
-    //user enters initials and saves high score to local storage.
 }
 
 // Event listener starts quiz when user clicks the startButton.
