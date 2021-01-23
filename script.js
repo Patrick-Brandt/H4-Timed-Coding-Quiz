@@ -42,7 +42,6 @@ var choicesList = document.getElementById("choices-list")
 //The below variables are for tracking points scored.
 var points = 0;
 var scores = document.querySelector(".scores");
-
 //This is for local storage
 var points = localStorage.getItem("points");
 
@@ -125,10 +124,9 @@ function endQuiz() {
 }
 
 function storePoints () {
-    points.textContent = points;
-    localStorage.setItem("count","count");
+    localStorage.setItem("score", points);
     var saveScore = prompt("Please enter your initials and high score.");
-    document.write (saveScore);
+    console.log (saveScore);
 }
 
 // Event listener starts quiz when user clicks the startButton.
