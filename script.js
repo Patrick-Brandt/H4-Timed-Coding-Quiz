@@ -13,7 +13,7 @@ var questions = [
     {
         question: "Patrick's coding skills have improved immensely since he started coding in December 2020.",
         choices: ["A. Maybe a little bit.","B. Not really, no.","C. What coding skills?","D. YES! Look at how far he has come in such a short time!"],
-        answer: "D. YES! Look at how far he has come in such a short time! " 
+        answer: "D. YES! Look at how far he has come in such a short time!" 
     },
     {
         question: "I would love to hire Patrick as a web developer, based on his winning smile and superb coding skills.",
