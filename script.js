@@ -106,7 +106,10 @@ function checkAnswer(event) {
         points += 20; 
         displayScore ();
         endQuiz();
-    }
+    } else if (chosenAnswer !== questions[currentQuestionIndex].answer && currentQuestionIndex === finishedQuizQuestions) {          
+        displayScore ();
+        endQuiz();
+    }        
 }
 
 //This function ends the quiz.
