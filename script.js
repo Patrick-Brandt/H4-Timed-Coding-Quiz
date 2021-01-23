@@ -1,14 +1,5 @@
 // To-do list
 
-// When you answer a question correctly, add points to score.
-    
-// When you answer a question incorrectly, time is subtracted from the clock.
-  
-// When all questions answered or time reaches 0, then GAME OVER.
-
-// When game over, user can enter their initials and score.
-    //need to add local storage.
-  
 // The below variables are for the quiz questions and answers.   
 var questions = [
     {
