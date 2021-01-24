@@ -27,13 +27,13 @@ SO THAT I can gauge my progress compared to my peers.
 
 ## Website Images
 
-	![Start screen for my multiple choice coding quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/startScreen.png?raw=true)
-  ![Question 1 of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q1.png?raw=true)
-  ![Question 2 of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q2.png?raw=true)
-  ![Question 3 of the Quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q3.png?raw=true)
-  ![Question 4 of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q4.png?raw=true)
-  ![Question 5 of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q5.png?raw=true)
-  ![End Screen showing time remaining and points.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/endScreen.png?raw=true)
+![Start section of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/startScreen.png?raw=true)	
+![Question 1 of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q1.png?raw=true)
+![Question 2 of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q2.png?raw=true)
+![Question 3 of the Quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q3.png?raw=true)
+![Question 4 of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q4.png?raw=true)
+![Question 5 of the quiz.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/q5.png?raw=true)
+![End Screen showing time remaining and points.](https://github.com/Patrick-Brandt/H4-Timed-Coding-Quiz/blob/main/Assets/endScreen.png?raw=true)
   
   ## Deployed at:
   [Multiple Choice Timed Coding Quiz](https://patrick-brandt.github.io/H4-Timed-Coding-Quiz/)
