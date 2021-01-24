@@ -44,6 +44,8 @@ var points = 0;
 var scores = document.querySelector(".scores");
 //This is for local storage
 var points = localStorage.getItem("points");
+var initialsAndScore = saveScore + points;
+var saveScore ;
 
 //starts the Quiz
 function startQuiz() {
@@ -78,7 +80,6 @@ function displayQuestion() {
     // Loops through answers from current question and display each one in a button.
     questions[currentQuestionIndex].choices.forEach(function(choice) {
         var button = document.createElement('button')
-
         button.textContent = choice
         button.addEventListener("click", checkAnswer)
         choicesList.append(button)
@@ -111,7 +112,7 @@ function checkAnswer(event) {
     } else if (chosenAnswer !== questions[currentQuestionIndex].answer && currentQuestionIndex === finishedQuizQuestions) {          
         displayScore ();
         endQuiz();
-        storePoints
+        storePoints ();
     }        
 }
 
@@ -123,10 +124,14 @@ function endQuiz() {
     storePoints();
 }
 
+//This function stores points to local storage.
 function storePoints () {
     localStorage.setItem("score", points);
     var saveScore = prompt("Please enter your initials.");
-    console.log (saveScore);
+    console.log ("Your initials are: ",saveScore);
+    console.log ("Your score was: ",points)
+    initialsAndScore = saveScore + points;
+    localStorage.setItem("lastScore", initialsAndScore)
 }
 
 // Event listener starts quiz when user clicks the startButton.
